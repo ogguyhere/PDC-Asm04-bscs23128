@@ -34,8 +34,8 @@ PDC-Asm04-bscs23128
 ### 1. Clone and install
 
 ```bash
-git clone https://github.com/[Your-Username]/PDC-Sp24-[Your-ID]-[Your-LastName].git
-cd PDC-Sp24-[Your-ID]-[Your-LastName]
+git clone https://github.com/[Your-Username]/PDC-Sp24-[Your-ID]-[Your-LastName].git](https://github.com/ogguyhere/PDC-Asm04-bscs23128.git
+cd PDC-Asm04-bscs23128
 
 pip install -r requirements.txt
 ```
@@ -45,7 +45,7 @@ pip install -r requirements.txt
 Open `app/main.py` and replace the placeholder on line:
 
 ```python
-STUDENT_ID = "YOUR-STUDENT-ID"   # ← replace this
+STUDENT_ID = "Bscs23128"   # ← replace this
 ```
 
 ### 3. Start the server
@@ -85,21 +85,39 @@ curl -X POST http://localhost:8000/breaker/reset
 pytest tests/test_circuit_breaker.py -v
 ```
 
-**Expected output — all 10 tests pass:**
+**Output — all 10 tests pass:**
 
 ```
-tests/test_circuit_breaker.py::test_student_id_header_present          PASSED
-tests/test_circuit_breaker.py::test_without_breaker_requests_block     PASSED
-tests/test_circuit_breaker.py::test_breaker_trips_after_threshold      PASSED
-tests/test_circuit_breaker.py::test_open_breaker_fails_fast            PASSED
-tests/test_circuit_breaker.py::test_breaker_recovers_to_half_open      PASSED
-tests/test_circuit_breaker.py::test_successful_probe_closes_breaker    PASSED
-tests/test_circuit_breaker.py::test_api_returns_fallback_when_open     PASSED
-tests/test_circuit_breaker.py::test_api_trips_breaker_on_repeated_failure PASSED
-tests/test_circuit_breaker.py::test_breaker_status_endpoint            PASSED
-tests/test_circuit_breaker.py::test_breaker_reset_endpoint             PASSED
+collected 10 items                                                                                                                                                                                       
 
-10 passed in 1.76s
+tests/test_circuit_breaker.py::test_student_id_header_present PASSED                                                                                                                               [ 10%]
+tests/test_circuit_breaker.py::test_without_breaker_requests_block PASSED                                                                                                                          [ 20%]
+tests/test_circuit_breaker.py::test_breaker_trips_after_threshold PASSED                                                                                                                           [ 30%]
+tests/test_circuit_breaker.py::test_open_breaker_fails_fast PASSED                                                                                                                                 [ 40%]
+tests/test_circuit_breaker.py::test_breaker_recovers_to_half_open PASSED                                                                                                                           [ 50%]
+tests/test_circuit_breaker.py::test_successful_probe_closes_breaker PASSED                                                                                                                         [ 60%]
+tests/test_circuit_breaker.py::test_api_returns_fallback_when_open PASSED                                                                                                                          [ 70%]
+tests/test_circuit_breaker.py::test_api_trips_breaker_on_repeated_failure PASSED                                                                                                                   [ 80%]
+tests/test_circuit_breaker.py::test_breaker_status_endpoint PASSED                                                                                                                                 [ 90%]
+tests/test_circuit_breaker.py::test_breaker_reset_endpoint PASSED                                                                                                                                  [100%]
+
+============================================================================================ warnings summary ============================================================================================
+tests/test_circuit_breaker.py::test_open_breaker_fails_fast
+  /home/kaysaurus/Documents/Workspace S-26/PDC/Asm 04/PDC-Asm04-bscs23128/tests/test_circuit_breaker.py:131: RuntimeWarning: coroutine 'test_open_breaker_fails_fast.<locals>.fail_once' was never awaited
+    with pytest.raises(CircuitOpenError):
+  Enable tracemalloc to get traceback where the object was allocated.
+  See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info.
+
+tests/test_circuit_breaker.py::test_api_returns_fallback_when_open
+tests/test_circuit_breaker.py::test_api_trips_breaker_on_repeated_failure
+  /home/kaysaurus/Documents/Workspace S-26/PDC/Asm 04/PDC-Asm04-bscs23128/tests/../app/main.py:218: RuntimeWarning: coroutine 'generate.<locals>.call_llm' was never awaited
+    return JSONResponse(
+  Enable tracemalloc to get traceback where the object was allocated.
+  See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info.
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+===================================================================================== 10 passed, 3 warnings in 1.96s =====================================================================================
+[kaysaurus@archlinux PDC-Asm04-bscs23128]$ 
 ```
 
 ---
