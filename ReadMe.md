@@ -1,5 +1,3 @@
-# [Your Name] — [Bscs23128]
-
 # PDC-Sp24-[Bscs23128]-[Khadijah]
 
 **Course:** Parallel and Distributed Computing (PDC) — Assignment 4
