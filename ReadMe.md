@@ -19,14 +19,13 @@ Every API response includes the mandatory `X-Student-ID` header via FastAPI midd
 ## Project Structure
 
 ```
-PDC-Sp24-[Your-ID]-[Your-LastName]/
+PDC-Asm04-bscs23128
 ├── app/
 │   └── main.py          ← FastAPI app + Circuit Breaker + middleware
 ├── tests/
 │   └── test_circuit_breaker.py  ← 10 tests proving before/after behavior
 ├── REPORT.md            ← Parts 1 & 2 (convert to PDF before submitting)
 ├── requirements.txt
-├── pytest.ini
 └── README.md            ← This file
 ```
 
